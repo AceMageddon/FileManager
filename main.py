@@ -4,14 +4,13 @@ import shutil
 print('Ввод команды:')
 text = input()
 text = text.split(' ')
-print(text)
+root = 'C:/'
 count = 0
 while text[0] != 'stop':
     if count > 0:
         print('Ввод команды:')
         text = input()
         text = text.split(' ')
-        print(text)
 
     def mkdir():
         path = text[1]
@@ -57,8 +56,8 @@ while text[0] != 'stop':
         os.rename(text[1], text[2])
 
 
-    if (text[0] != 'getcwd') and (text[0] != 'stop') and (text[0] != '/'):
-        if(text[1][0] != 'C') and (text[1][0] != ':'):
+    if (text[0] != 'getcwd') and (text[0] != 'stop'):
+        if(text[1][0] != 'C') and (text[1][0] != ':') and (text[1][0] != '/'):
          text[1] = root + '/' + text[1]
 
     if text[0] == 'getcwd':
