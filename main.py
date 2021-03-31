@@ -4,7 +4,7 @@ import shutil
 print('Ввод команды:')
 text = input()
 text = text.split(' ')
-root = 'C:/'
+root = os.getcwd()
 count = 0
 while text[0] != 'stop':
     if count > 0:
@@ -25,8 +25,8 @@ while text[0] != 'stop':
         os.chdir(path)
 
     def getcwd():
-        root = os.getcwd()
-        print(root)
+        path = os.getcwd()
+        print(path)
 
     def create():
         f = open(text[1], 'w')
